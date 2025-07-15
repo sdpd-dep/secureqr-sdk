@@ -61,6 +61,8 @@ qr = ShaQR.create_shaqr("Welcome", "topsecret", "mykey")
 with open("welcome_qr.png", "wb") as f:
     f.write(base64.b64decode(qr.get_coderesult()))
 ```
+------------------------------------------------
+
 
 # Peruri-ShaQR-Scanner-SDK
 
@@ -79,11 +81,11 @@ To integrate this SDK into your Android project, ensure your project meets the f
 - Java Compatibility: Java 11 (sourceCompatibility and targetCompatibility)
 - Kotlin Compatibility: JVM target 11
 
-## Features
+# Features
 - Scan ShaQR codes and standard QR codes using Camera.
 - Support scanning ShaQR codes from Gallery images.
 
-## Instalation
+# Instalation
 Add .aar to your project
 1. Place the peruri-shaqr-sdk.aar file in your app’s libs/ folder.
 2. Add the following to your app/build.gradle:
@@ -100,8 +102,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar", "*.aar"))))
 }
 ```
-## Usage
-#### Launch Scanner
+# Usage
+### Launch Scanner
 
 - Register Scanner Launcher
 ```kotlin
@@ -122,7 +124,7 @@ val shaqrIntent = ShaQR.getIntent(this)
 scannerLauncher.launch(shaqrIntent)
 ```
 
-#### Decode the Result
+### Decode the Result
 ```kotlin
 val decoder = ShaQRDecoder.Builder().config {
     setEncryptionKey("peruri123") // Optional
